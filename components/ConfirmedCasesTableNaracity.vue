@@ -3,6 +3,17 @@
     <li :class="[$style.box, $style.tall, $style.tested]">
       <div :class="[$style.pillar_tested]">
         <div :class="$style.content">
+          <span> {{ $t('検査数') }}<br />({{ $t('累計') }}) </span>
+          <span>
+            <strong>{{ 感染者数累計 }}</strong>
+            <span :class="$style.unit">{{ $t('人') }}</span>
+          </span>
+        </div>
+      </div>
+    </li>
+    <li :class="[$style.box, $style.tall, $style.tested]">
+      <div :class="[$style.pillar_tested]">
+        <div :class="$style.content">
           <span> {{ $t('感染者数') }}<br />({{ $t('累計') }}) </span>
           <span>
             <strong>{{ 感染者数累計 }}</strong>
@@ -42,7 +53,20 @@
               <span v-html="$t('宿泊療養')" />
               <!-- eslint-enable vue/no-v-html-->
               <span>
-                <strong>{{ 宿泊療養 }}</strong>
+                <strong>-</strong>
+                <span :class="$style.unit">{{ $t('人') }}</span>
+              </span>
+            </div>
+          </div>
+        </li>
+        <li :class="[$style.box, $style.minor]">
+          <div :class="$style.pillar">
+            <div :class="$style.content">
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('自宅療養')" />
+              <!-- eslint-enable vue/no-v-html-->
+              <span>
+                <strong>-</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
